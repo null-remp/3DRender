@@ -57,6 +57,11 @@ int Window::init()
 	return 0;
 }
 
+GLFWwindow* Window::GetWindow() const
+{
+	return mWindow;
+}
+
 void Window::PollEvents()
 {
 	glfwPollEvents();

@@ -20,7 +20,7 @@ int main()
 {
 	window.init();
 
-
+	 
 
 
 	while (!window.ShouldClose())

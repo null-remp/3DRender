@@ -13,10 +13,8 @@ private:
 public:
 	int init();
 
-	GLFWwindow* GetWindow() const
-	{
-		return mWindow;
-	}
+	GLFWwindow* GetWindow() const;
+	
 
 	void PollEvents();
 	void SwapBuffers();
