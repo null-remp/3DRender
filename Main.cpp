@@ -5,6 +5,7 @@
 #include <GLFW/x64/glfw3.h>
 
 #include "EngineComps/Window.h"
+#include "EngineComps/Utils.h"
 
 void processInput(GLFWwindow* window)
 {
@@ -16,12 +17,20 @@ void processInput(GLFWwindow* window)
 
 Window window;
 
+float vertices[] = {
+	-0.5f, -0.5f, 0.0f,
+	 0.5f, -0.5f, 0.0f,
+	 0.0f,  0.5f, 0.0f
+};
+
+
 int main()
 {
 	window.init();
 
-	 
-
+	//Buffers
+	unsigned int VBO = CreateVBO(vertices, sizeof(vertices));
+	
 
 	while (!window.ShouldClose())
 	{

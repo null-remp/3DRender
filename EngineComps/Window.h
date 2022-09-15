@@ -14,7 +14,6 @@ public:
 	int init();
 
 	GLFWwindow* GetWindow() const;
-	
 
 	void PollEvents();
 	void SwapBuffers();
