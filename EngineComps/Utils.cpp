@@ -14,6 +14,14 @@ unsigned int CreateVBO(float* verts, size_t size)
 
 unsigned int CreateVAO(float* verts, size_t size)
 {
-	return 0;
+	unsigned int VBO = CreateVBO(verts, size);
+	unsigned int VAO;
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+	//glDeleteBuffers(1, &VBO);
+	return VAO;
 
 }
