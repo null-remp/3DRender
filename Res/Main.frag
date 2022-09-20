@@ -4,7 +4,9 @@ out vec4 fragColor;
 
 in vec3 vertexColor;
 
+in vec3 position;
+
 void main()
 {
-	fragColor = vec4(vertexColor, 1.0f);
+	fragColor = vec4(position, 1.0f);
 }

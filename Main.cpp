@@ -10,6 +10,8 @@
 
 #include "Config.h"
 
+#include "EngineComps/Loader/stb_image.h"
+
 void processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -21,9 +23,10 @@ void processInput(GLFWwindow* window)
 Window window;
 
 float vertices[] = {
-   -0.5f, 0.0f, 0.0f,	1.0f, 0.0f, 1.0f,
-	0.0f, 0.5f, 0.0f,	1.0f, 0.0f, 1.0f,
-	0.5f, 0.0f, 0.0f,	1.0f, 0.0f, 1.0f
+	//Coords				//Tex Coords
+   -0.5f,  0.0f,  0.0f,		0.0f,  0.0f,
+    0.0f,  0.5f,  0.0f,		0.5f,  1.0f,
+    0.5f,  0.0f,  0.0f,		1.0f,  0.0f
 };
 
 int main()
@@ -51,9 +54,12 @@ int main()
 	glBindVertexArray(VAO);
 
 	
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	Shader shader(MAIN_VERT_PATH, MAIN_FRAG_PATH);
+
+	int width, height, channels;
+	unsigned char* data = stbi_load("wooden_container.jpg", &width, &height, &channels, 0);
 
 	while (!window.ShouldClose())
 	{
